@@ -11,7 +11,8 @@ class QIntValidator;
 class QDESIGNER_WIDGET_EXPORT LabeledSlider : public QWidget, public Ui::LabeledSlider
 {
 Q_OBJECT
-
+Q_PROPERTY( QString name READ name WRITE setName DESIGNABLE true)
+//Q_PROPERTY( int number READ lblName->text WRITE lblName->setText DESIGNABLE true)
 signals:
   void valueChanged(int);
   
@@ -27,9 +28,22 @@ public:
 
   void setMinimum(const unsigned int);
   void setMaximum(const unsigned int);
+  
+  QString name()
+  {
+    return m_name;
+  }
+  
+  void setName(const QString& name_in)
+  {
+    m_name = name_in;
+    lblName->setText(m_name);
+  }
+  
 protected:
   QIntValidator* Validator;
 
+  QString m_name;
 };
 
 #endif
