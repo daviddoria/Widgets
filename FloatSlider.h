@@ -12,6 +12,8 @@ class QDoubleValidator;
 class QDESIGNER_WIDGET_EXPORT FloatSlider : public LabeledSlider
 {
 Q_OBJECT
+Q_PROPERTY( double minValueText READ minValueText WRITE setMinValueText DESIGNABLE true STORED false)
+Q_PROPERTY( double maxValueText READ maxValueText WRITE setMaxValueText DESIGNABLE true STORED false)
 
 signals:
   void valueChanged(float);
@@ -23,14 +25,19 @@ public:
   void setMinimum(const float);
   void setMaximum(const float);
 
+  virtual double minValueText() const;
+  virtual void setMinValueText(const double minValue_in);
+  virtual double maxValueText() const;
+  virtual void setMaxValueText(const double maxValue_in);
+
 public slots:
   void slot_horizontalSlider_valueChanged(int value);
-  virtual void on_txtMin_textEdited( const QString & text );
-  virtual void on_txtMax_textEdited( const QString & text );
+  virtual void on_txtMin_textChanged( const QString & text );
+  virtual void on_txtMax_textChanged( const QString & text );
   
 protected:
-  float MinValue;
-  float MaxValue;
+  void SetCurrentValueLabel();
+
   QDoubleValidator* Validator;
 
 };
