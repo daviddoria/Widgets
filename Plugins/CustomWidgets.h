@@ -1,5 +1,7 @@
 #include "LabeledSliderPlugin.h"
 #include "FloatSliderPlugin.h"
+#include "CoordinateEditWidgetPlugin.h"
+#include "FileSelectionWidgetPlugin.h"
 
 #include <QtDesigner/QtDesigner>
 #include <QtCore/qplugin.h>

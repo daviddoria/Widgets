@@ -15,6 +15,10 @@ Q_OBJECT
 public:
   ExampleWidget(QWidget *parent = 0);
 
+public slots:
+  // CoordinateEdit
+  //void on_coordinateEdit_coordinateChanged(std::vector<double> coord);
+  void slot_coordinateEdit_coordinateChanged(QVector<double> coord);
 };
 
 #endif
