@@ -17,9 +17,9 @@
    <widget class="LabeledSlider" name="labeledSliderPlugin">
     <property name="geometry">
      <rect>
-      <x>320</x>
-      <y>60</y>
-      <width>271</width>
+      <x>210</x>
+      <y>40</y>
+      <width>331</width>
       <height>100</height>
      </rect>
     </property>
@@ -30,15 +30,18 @@
      <string>The LabeledSlider widget takes the responsibility of diplaying the current value in the label.</string>
     </property>
     <property name="name">
-     <string>Labeled slider</string>
+     <string>Labeled</string>
+    </property>
+    <property name="maxValueText">
+     <number>40</number>
     </property>
    </widget>
    <widget class="FloatSlider" name="floatSlider">
     <property name="geometry">
      <rect>
-      <x>340</x>
-      <y>280</y>
-      <width>261</width>
+      <x>170</x>
+      <y>230</y>
+      <width>291</width>
       <height>100</height>
      </rect>
     </property>
@@ -47,9 +50,6 @@
     </property>
     <property name="whatsThis">
      <string>The float slider widget allows the user to select a float value.</string>
-    </property>
-    <property name="name">
-     <string>Float slider</string>
     </property>
    </widget>
   </widget>

@@ -6,11 +6,11 @@ TEMPLATE    = lib
 
 QTDIR_build:DESTDIR     = $$QT_BUILD_TREE/plugins/designer
 
-HEADERS     = LabeledSlider.h \
+HEADERS     = ../LabeledSlider.h \
               LabeledSliderPlugin.h
-SOURCES     = LabeledSlider.cpp \
+SOURCES     = ../LabeledSlider.cpp \
               LabeledSliderPlugin.cpp
-FORMS       = LabeledSlider.ui
+FORMS       = ../LabeledSlider.ui
 
 # install
 target.path = $$[QT_INSTALL_PLUGINS]/designer

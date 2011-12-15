@@ -45,12 +45,14 @@ void LabeledSlider::on_txtMin_textChanged( const QString & text )
 {
   this->horizontalSlider->setMinimum(text.toInt());
   SetCurrentValueLabel();
+  emit valueChanged(value());
 }
 
 void LabeledSlider::on_txtMax_textChanged( const QString & text )
 {
   this->horizontalSlider->setMaximum(text.toInt());
   SetCurrentValueLabel();
+  emit valueChanged(value());
 }
 
 void LabeledSlider::setMinimum(const unsigned int value)

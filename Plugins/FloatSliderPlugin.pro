@@ -7,13 +7,13 @@ TEMPLATE    = lib
 QTDIR_build:DESTDIR     = $$QT_BUILD_TREE/plugins/designer
 
 
-HEADERS     = FloatSlider.h \
+HEADERS     = ../FloatSlider.h \
               FloatSliderPlugin.h \
-              LabeledSlider.h
-SOURCES     = FloatSlider.cpp \
-              LabeledSlider.cpp \
+              ../LabeledSlider.h
+SOURCES     = ../FloatSlider.cpp \
+              ../LabeledSlider.cpp \
               FloatSliderPlugin.cpp
-FORMS       = LabeledSlider.ui # The widget layout for FloatSlider is exactly the same as LabeledSlider
+FORMS       = ../LabeledSlider.ui # The widget layout for FloatSlider is exactly the same as LabeledSlider
 
 
 # install

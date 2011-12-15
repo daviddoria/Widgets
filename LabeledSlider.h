@@ -11,10 +11,16 @@ class QIntValidator;
 class QDESIGNER_WIDGET_EXPORT LabeledSlider : public QWidget, public Ui::LabeledSlider
 {
 Q_OBJECT
-Q_PROPERTY( QString name READ name WRITE setName DESIGNABLE true STORED false)
 //Q_PROPERTY( float minValue READ minValue WRITE setMinValue DESIGNABLE true) // NOTE: Float does not work in Designer! Use double instead.
-Q_PROPERTY( int minValueText READ minValueText WRITE setMinValueText DESIGNABLE true STORED false)
-Q_PROPERTY( int maxValueText READ maxValueText WRITE setMaxValueText DESIGNABLE true STORED false)
+
+// Q_PROPERTY( QString name READ name WRITE setName DESIGNABLE true STORED false)
+// Q_PROPERTY( int minValueText READ minValueText WRITE setMinValueText DESIGNABLE true STORED false)
+// Q_PROPERTY( int maxValueText READ maxValueText WRITE setMaxValueText DESIGNABLE true STORED false)
+
+// Even though we don't have an ivar to maintain the state directly, STORED must be true or the values set in designer are reset when the widget is actually instantiated
+Q_PROPERTY( QString name READ name WRITE setName DESIGNABLE true STORED true)
+Q_PROPERTY( int minValueText READ minValueText WRITE setMinValueText DESIGNABLE true STORED true)
+Q_PROPERTY( int maxValueText READ maxValueText WRITE setMaxValueText DESIGNABLE true STORED true)
 
 signals:
   void valueChanged(int);

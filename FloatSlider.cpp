@@ -38,12 +38,14 @@ void FloatSlider::setMinimum(const float value)
 {
   this->txtMin->setText(QString::number(value));
   this->lblCurrent->setText(QString::number(GetValue()));
+  emit valueChanged(GetValue());
 }
 
 void FloatSlider::setMaximum(const float value)
 {
   this->txtMax->setText(QString::number(value));
   this->lblCurrent->setText(QString::number(GetValue()));
+  emit valueChanged(GetValue());
 }
 
 void FloatSlider::slot_horizontalSlider_valueChanged(int value)
@@ -56,11 +58,13 @@ void FloatSlider::slot_horizontalSlider_valueChanged(int value)
 void FloatSlider::on_txtMin_textChanged( const QString & text )
 {
   this->lblCurrent->setText(QString::number(GetValue()));
+  emit valueChanged(GetValue());
 }
 
 void FloatSlider::on_txtMax_textChanged( const QString & text )
 {
   this->lblCurrent->setText(QString::number(GetValue()));
+  emit valueChanged(GetValue());
 }
 
 double FloatSlider::minValueText() const
