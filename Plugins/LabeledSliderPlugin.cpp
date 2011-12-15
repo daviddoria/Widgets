@@ -126,4 +126,4 @@ QString LabeledSliderPlugin::includeFile() const
     return "LabeledSlider.h";
 }
 
-Q_EXPORT_PLUGIN2(LabeledSliderPlugin, LabeledSliderPlugin)
+// Q_EXPORT_PLUGIN2(LabeledSliderPlugin, LabeledSliderPlugin)

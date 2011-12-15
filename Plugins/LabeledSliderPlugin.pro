@@ -6,11 +6,15 @@ TEMPLATE    = lib
 
 QTDIR_build:DESTDIR     = $$QT_BUILD_TREE/plugins/designer
 
-HEADERS     = ../LabeledSlider.h \
+INCLUDEPATH += $$PWD/..
+
+# Note: $$PWD is where the .pro file is located
+
+HEADERS     = $$PWD/../LabeledSlider.h \
               LabeledSliderPlugin.h
-SOURCES     = ../LabeledSlider.cpp \
+SOURCES     = $$PWD/../LabeledSlider.cpp \
               LabeledSliderPlugin.cpp
-FORMS       = ../LabeledSlider.ui
+FORMS       = $$PWD/../LabeledSlider.ui
 
 # install
 target.path = $$[QT_INSTALL_PLUGINS]/designer

@@ -126,4 +126,4 @@ QString FloatSliderPlugin::includeFile() const
     return "FloatSlider.h";
 }
 
-Q_EXPORT_PLUGIN2(FloatSliderPlugin, FloatSliderPlugin)
+// Q_EXPORT_PLUGIN2(FloatSliderPlugin, FloatSliderPlugin)
