@@ -4,7 +4,7 @@
 
 #include <QDoubleValidator>
 
-CoordinateEditWidget::CoordinateEditWidget(QWidget *parent)
+CoordinateEditWidget::CoordinateEditWidget(QWidget *parent) : QWidget(parent)
 {
   this->setupUi(this);
 

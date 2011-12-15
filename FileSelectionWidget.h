@@ -16,6 +16,11 @@
  *
  *=========================================================================*/
 
+// This widget is intended to be added multiple times to a widget.
+// If you only need to select one file, use QFileDialog. If you need to select
+// multiple files that can potentially come from different directories, use
+// this widget.
+
 #ifndef FileSelectionWidget_H
 #define FileSelectionWidget_H
 
