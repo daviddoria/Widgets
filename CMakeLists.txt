@@ -32,4 +32,7 @@ ${CustomWidgetsUISrcs} ${CustomWidgetsMOCSrcs})
 add_executable(Example Example.cpp ExampleWidget.cpp ${CustomWidgetsUISrcs} ${CustomWidgetsMOCSrcs})
 target_link_libraries(Example libCustomWidgets ${QT_LIBRARIES})
 
-add_subdirectory(Tests)
+SET(Widgets_BuildTests OFF CACHE BOOL "Widgets_BuildTests")
+if(Widgets_BuildTests)
+  add_subdirectory(Tests)
+endif()

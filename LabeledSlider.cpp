@@ -5,7 +5,7 @@
 LabeledSlider::LabeledSlider(QWidget *parent) : QWidget(parent)
 {
   setupUi(this);
-  
+
   //this->txtMin->setText(QString::number(this->horizontalSlider->minimum()));
   //this->txtMax->setText(QString::number(this->horizontalSlider->maximum()));
 
@@ -18,7 +18,7 @@ LabeledSlider::LabeledSlider(QWidget *parent) : QWidget(parent)
 
   // Position the slider in the center of the range
   this->horizontalSlider->setValue((this->txtMax->text().toInt() - this->txtMin->text().toInt())/2);
-  
+
   // Set the value label
   this->lblCurrent->setText(QString::number(this->horizontalSlider->value()));
 
@@ -29,6 +29,8 @@ LabeledSlider::LabeledSlider(QWidget *parent) : QWidget(parent)
   connect(this->horizontalSlider, SIGNAL(valueChanged(int)), this, SLOT(slot_horizontalSlider_valueChanged(int)));
   //connect(this->txtMin, SIGNAL(textChanged(const QString&)), this, SLOT(slot_rangeChanged()));
   //connect(this->txtMax, SIGNAL(textChanged(const QString&)), this, SLOT(slot_rangeChanged()));
+
+  connect(this->horizontalSlider, SIGNAL(sliderReleased()), this, SLOT(slot_horizontalSlider_sliderReleased()));
 }
 
 void LabeledSlider::SetCurrentValueLabel()
@@ -72,6 +74,11 @@ void LabeledSlider::slot_horizontalSlider_valueChanged(int value)
   //std::cout << "LabeledSlider::on_horizontalSlider_valueChanged" << std::endl;
   this->lblCurrent->setText(QString::number(value));
   emit valueChanged(value);
+}
+
+void LabeledSlider::slot_horizontalSlider_sliderReleased()
+{
+  emit sliderReleased();
 }
 
 QString LabeledSlider::name()
