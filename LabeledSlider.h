@@ -8,6 +8,10 @@
 
 class QIntValidator;
 
+/** This widget was created in QtDesigner. It contains a horizontal slider and a lineEdit on either side of the slider
+  * to allow the user to view and/or change the min/max values. The slider (this->horizontalSlider) does not appear in this
+  * class definition because it was added in QtDesigner.
+  */
 class QDESIGNER_WIDGET_EXPORT LabeledSlider : public QWidget, public Ui::LabeledSlider
 {
 Q_OBJECT

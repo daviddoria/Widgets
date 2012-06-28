@@ -1,4 +1,5 @@
 #include <iostream>
+#include <sstream>
 
 #include "LabeledSlider.h"
 
@@ -60,12 +61,18 @@ void LabeledSlider::on_txtMax_textChanged( const QString & text )
 void LabeledSlider::setMinimum(const unsigned int value)
 {
   this->horizontalSlider->setMinimum(value);
+  std::stringstream ss;
+  ss << value;
+  txtMin->setText(ss.str().c_str());
   SetCurrentValueLabel();
 }
 
 void LabeledSlider::setMaximum(const unsigned int value)
 {
   this->horizontalSlider->setMaximum(value);
+  std::stringstream ss;
+  ss << value;
+  txtMax->setText(ss.str().c_str());
   SetCurrentValueLabel();
 }
 
