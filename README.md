@@ -13,7 +13,7 @@ On this line:
 "const QMetaObjectExtraData LabeledSlider::staticMetaObjectExtraData = {
     0,  qt_static_metacall };"
 
-I have only tried to build these widgets on Linux+gcc, so I can't comment on a fix for this. If anyone has one, I'm all ears :)
+I have only tried to build these widgets on Linux+gcc, so I can't comment on a fix for this. If anyone has one, please let me know.
 
 By removing the tag "QDESIGNER_WIDGET_EXPORT" from the definition of the classes FloatSlider, LabeledSlider, and CoordinateEditWidget 
 (in their correspondent header files, e.g. "FloatSlider.h"), the repository will build, but the widgets will not be available in the QtDesigner GUI. 
